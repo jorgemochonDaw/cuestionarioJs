@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechas</title>
+</head>
+
+<body>
+    <header>
+        <h1>Fechas</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Determinar si la fecha pertenece al primer trimestre</h2>
+            <form action="#">
+                <label for="fecha">Digite una fecha: </label>
+                <input type="date" name="fecha" id="fecha">
+                <button id="btn-enviar">Comprobar</button>
+            </form>
+            <p id="resultado">
+
+            </p>
+        </section>
+    </main>
+</body>
+<script>
+    const fecha = document.querySelector('#fecha');
+    const resultado = document.querySelector('#resultado');
+    const btnEnviar = document.querySelector('#btn-enviar');
+
+    function inicializarFunciones() {
+        eventos();
+    }
+
+    inicializarFunciones();
+
+    function eventos() {
+        btnEnviar.addEventListener('click', determinarNavidad);
+    }
+
+    function determinarNavidad(e) {
+        e.preventDefault();
+        const dividirFecha = fecha.value.split("");
+        if (dividirFecha[5] == 1 && dividirFecha[6] == 2 && dividirFecha[8] == 2 && dividirFecha[9] == 5) {
+            resultado.innerHTML = "Es navidad";
+        } else {
+            resultado.innerHTML = "No es navidad";
+        }
+    }
+</script>
+
+</html>
