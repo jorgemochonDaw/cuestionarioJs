@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <main>
+        <section>
+            <h2>Sustituir: </h2>
+            <form action="#">
+                <label for="texto">Texto: </label>
+                <input type="text" name="texto" id="texto">
+                <button id="btn-enviar">Enviar texto</button>
+            </form>
+            <p id="resultado">
+
+            </p>
+            <form action="#">
+                <label for="new">Texto nuevo: </label>
+                <input type="text" name="new" id="new">
+                <button id="btn-enviar">Sustituir</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+<script>
+    const texto = document.querySelector('#texto');
+    const btnEnviar = document.querySelector('#btn-enviar');
+    const r = document.querySelector('#resultado');
+    function inicializarFunciones() {
+        eventos();
+    }
+
+    inicializarFunciones();
+
+    function eventos() {
+        btnEnviar.addEventListener('click', mostrarTexto);
+    }
+
+    function mostrarTexto(e){
+        e.preventDefault();
+        r.innerHTML = texto.value;
+    }
+</script>
+</html>

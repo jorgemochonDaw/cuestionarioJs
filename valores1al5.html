@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicios cuestionario</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Escriba un numero: </h2>
+            <form action="#">
+                <label for="n">Digite un numero: </label>
+                <input type="number" name="n" id="n">
+                <button id="btn-enviar">Enviar</button>
+            </form>
+            <p id="resultado">
+
+            </p>
+        </section>
+    </main>
+</body>
+<script>
+    const btnEnviar = document.querySelector('#btn-enviar');
+    const n = document.querySelector('#n');
+    const resultado = document.querySelector('#resultado');
+
+    function inicializarFunciones() {
+        eventos();
+    }
+
+    inicializarFunciones();
+
+    function eventos() {
+        btnEnviar.addEventListener('click', determinarN);
+    }
+
+    function determinarN(e) {
+        e.preventDefault();
+        let valorN = n.value;
+        console.log(valorN);
+        switch (valorN) {
+            case "1":
+                resultado.innerHTML = `El numero introducido es: ${valorN}`;
+                break;
+            case "2":
+                resultado.innerHTML = `El numero introducido es: ${valorN}`;
+                break;
+            case "3":
+                resultado.innerHTML = `El numero introducido es: ${valorN}`;
+                break;
+            case "4":
+                resultado.innerHTML = `El numero introducido es: ${valorN}`;
+                break;
+            case "5":
+                resultado.innerHTML = `El numero introducido es: ${valorN}`;
+                break;
+            default:
+                resultado.innerHTML = `El numero introducido está fuera del rango: ${valorN}`;
+        }
+
+    }
+</script>
+
+
+</html>

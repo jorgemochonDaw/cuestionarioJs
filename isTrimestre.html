@@ -45,10 +45,14 @@
     function determinarNavidad(e) {
         e.preventDefault();
         const dividirFecha = fecha.value.split("");
-        if (dividirFecha[5] == 1 && dividirFecha[6] == 2 && dividirFecha[8] == 2 && dividirFecha[9] == 5) {
-            resultado.innerHTML = "Es navidad";
+        if (dividirFecha[5] == 0 && dividirFecha[6] == 1) {
+            resultado.innerHTML = `La fecha: ${fecha.value} pertenece al 1 trimestre`;
+        } else if (dividirFecha[5] == 0 && dividirFecha[6] == 2) {
+            resultado.innerHTML = `La fecha: ${fecha.value} pertenece al 1 trimestre`;
+        } else if (dividirFecha[5] == 0 && dividirFecha[6] == 3) {
+            resultado.innerHTML = `La fecha: ${fecha.value} pertenece al 1 trimestre`;
         } else {
-            resultado.innerHTML = "No es navidad";
+            resultado.innerHTML = `La fecha: ${fecha.value} no pertenece al 1 trimestre`;
         }
     }
 </script>

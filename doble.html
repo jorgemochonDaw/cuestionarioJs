@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicios cuestionario</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Determinar triple del primer numero y cuadrado del segundo numero: </h2>
+            <form action="#">
+                <label for="n1">n1: </label>
+                <input type="number" name="n1" id="n1">
+                <br>
+                <label for="n2">n2: </label>
+                <input type="number" name="n2" id="n2">
+                <br>
+                <label for="n3">n3: </label>
+                <input type="number" name="n3" id="n3">
+                <br>
+                <button id="btn-enviar">Comprobar dobles</button>
+            </form>
+            <hr>
+            <p id="resultados">
+
+            </p>
+        </section>
+    </main>
+</body>
+<script>
+    const n1 = document.querySelector('#n1');
+    const n2 = document.querySelector('#n2');
+    const n3 = document.querySelector('#n3');
+    const btnEnviar = document.querySelector('#btn-enviar');
+    const rs = document.querySelector('#resultados');
+
+    function inicializarFunciones() {
+        eventos();
+    }
+
+    inicializarFunciones();
+
+    function eventos() {
+        btnEnviar.addEventListener('click', determinarDoble);
+    }
+
+    function determinarDoble(e) {
+        e.preventDefault();
+        let mayor = null;
+        if (n1.value > n2.value && n1.value > n2.value) {
+            mayor = n1.value;
+        } else if (n2.value > n3.value && n2.value > n1.value) {
+            mayor = n2.value;
+        } else if (n3.value > n2.value && n3.value > n1.value) {
+            mayor = n3.value;
+        } else {
+            mayor = null;
+        }
+        rs.innerHTML =
+            `
+        El numero mayor es: ${mayor};
+        `;
+    }
+</script>
+
+
+</html>
